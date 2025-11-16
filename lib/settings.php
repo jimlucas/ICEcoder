@@ -46,7 +46,7 @@ if (false === $settingsClass->getConfigGlobalFileDetails()['readable']) {
 }
 
 // Check we can write global config settings file
-if (false === $ICEcoder["demoMode"] && false === $settingsClass->getConfigGlobalFileDetails()['writable']) {
+if ( isset($ICEcoder) && false === $ICEcoder["demoMode"] && false === $settingsClass->getConfigGlobalFileDetails()['writable']) {
     $reqsFailures = ["phpGlobalConfigWriteFile"];
     include dirname(__FILE__) . "/requirements.php";
 }
