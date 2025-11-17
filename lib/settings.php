@@ -19,7 +19,7 @@ if (false === $settingsClass->getDataDirDetails()['readable']) {
     include dirname(__FILE__) . "/requirements.php";
 }
 
-if (false === $ICEcoder["demoMode"] && false === $settingsClass->getDataDirDetails()['writable']) {
+if ( isset($ICEcoder) && false === $ICEcoder["demoMode"] && false === $settingsClass->getDataDirDetails()['writable']) {
     $reqsFailures = ["phpDataDirNotWritable"];
     include dirname(__FILE__) . "/requirements.php";
 }
